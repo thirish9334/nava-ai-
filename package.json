@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "approve": "^0.0.12",
+    "esbuild": "^0.28.2",
+    "ls": "^1.0.0",
+    "scripts": "^0.1.0",
+    "scrpts": "^0.3.2"
+  }
+}
