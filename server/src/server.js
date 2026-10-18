@@ -7,9 +7,18 @@ import { GoogleGenAI } from '@google/genai'
 const app = express()
 const PORT = process.env.PORT || 5000
 
+const cors = require("cors");
+
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://nava-ai-liart.vercel.app"
+];
+
 app.use(cors({
-  origin: process.env.CLIENT_URL || 'http://localhost:5173'
-}))
+  origin: allowedOrigins,
+  methods: ["GET", "POST", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"]
+}));
 app.use(express.json({ limit: '1mb' }))
 
 const ai = process.env.GEMINI_API_KEY
